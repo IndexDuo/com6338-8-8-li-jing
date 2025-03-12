@@ -47,7 +47,7 @@ submitButton.addEventListener("click", (e) => {
 
                 var skyPara = document.createElement("p");
                 skyPara.style.textTransform = "capitalize";
-                skyPara.textContent = `${res.weather.description}`;
+                skyPara.textContent = `${res.weather[0].description}`;
                 weatherSection.appendChild(skyPara);
 
                 var tempPara = document.createElement("p");
