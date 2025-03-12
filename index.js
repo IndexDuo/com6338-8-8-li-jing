@@ -17,6 +17,7 @@ submitButton.addEventListener("click", (e) => {
             return res.json();
         })
         .then(function (res) {
+            console.log(res);
             if (res.cod == "404" || res.data.cod == "404") {
                 console.log("not found");
                 var notFoundHeading = document.createElement("h2");
