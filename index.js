@@ -40,13 +40,22 @@ submitButton.addEventListener("click", (e) => {
                 weatherSection.appendChild(image);
 
                 var skyPara = document.createElement("p");
-                skyPara.style.text
+                skyPara.style.textTransform = "capitalize";
+                skyPara.textContent = `${res.weather.description}`;
+                weatherSection.appendChild(weatherSection);
 
                 var tempPara = document.createElement("p");
+                tempPara.textContent = `Current: ${res.main.temp}`;
+                weatherSection.appendChild(tempPara);
 
                 var feelsLikePara = document.createElement("p");
+                feelsLikePara.textContent = `Feels like: ${res.main.feels_like}`;
+                weatherSection.appendChild(feelsLikePara);
 
                 var lastUpdatedPara = document.createElement("p");
+                lastUpdatedPara.textContent = `Current: ${res.main.temp}`;
+                weatherSection.appendChild(lastUpdatedPara);
+
             }
             console.log(res);
         });
