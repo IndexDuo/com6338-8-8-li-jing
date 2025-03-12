@@ -23,10 +23,10 @@ submitButton.addEventListener("click", (e) => {
             } else {
                 console.log("found");
                 var cityCountry = document.createElement("h2");
-                // console.log(res.sys.country);
+                console.log(res.sys.country);
                 cityCountry.textContent = `${res.name}, ${res.sys.country}`;
                 weatherSection.append(cityCountry);
             }
-            // console.log(res);
+            console.log(res);
         });
 });
