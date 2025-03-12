@@ -17,8 +17,11 @@ submitButton.addEventListener("click", (e) => {
             return res.json();
         })
         .then(function (res) {
-            console.log(res.ok);
-            if (!res.ok) {
+            console.log(res);
+            if (
+                "data" in res &&
+                (res?.cod == "404" || res?.data.cod == "404")
+            ) {
                 console.log("not found");
                 var notFoundHeading = document.createElement("h2");
                 notFoundHeading.textContent = "Location Not Found";
