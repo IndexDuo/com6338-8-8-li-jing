@@ -33,7 +33,11 @@ submitButton.addEventListener("click", (e) => {
                 googleMap.target = "__BLANK";
                 googleMap.textContent = "Click to view map";
                 weatherSection.appendChild(googleMap);
-                console.log(googleMap);
+                // console.log(googleMap);
+
+                var image = document.createElement("img");
+                image.src = `https://openweathermap.org/img/wn/${res.weather.icon}@2x.png`;
+                weatherSection.appendChild(image);
             }
             console.log(res);
         });
