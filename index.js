@@ -5,6 +5,7 @@ var weatherSection = document.getElementById("weather");
 
 submitButton.addEventListener("click", (e) => {
     e.preventDefault();
+    console.log(userInput.value);
     weatherSection.innerHTML = "";
     var location = userInput.value;
     userInput.value = "";
@@ -59,7 +60,7 @@ submitButton.addEventListener("click", (e) => {
                     hour: "numeric",
                     minute: "2-digit",
                 });
-                lastUpdatedPara.textContent = `Current: ${timeString}`;
+                lastUpdatedPara.textContent = `Last updated: ${timeString}`;
                 weatherSection.appendChild(lastUpdatedPara);
             }
             console.log(res);
