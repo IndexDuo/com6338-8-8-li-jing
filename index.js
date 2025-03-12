@@ -53,9 +53,9 @@ submitButton.addEventListener("click", (e) => {
                 weatherSection.appendChild(feelsLikePara);
 
                 var lastUpdatedPara = document.createElement("p");
-                lastUpdatedPara.textContent = `Current: ${res.main.temp}`;
+                var lastUpdatedTime = res.dt * 1000;
+                lastUpdatedPara.textContent = `Current: ${lastUpdatedTime}`;
                 weatherSection.appendChild(lastUpdatedPara);
-
             }
             console.log(res);
         });
