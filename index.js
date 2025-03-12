@@ -30,7 +30,7 @@ submitButton.addEventListener("click", (e) => {
 
                 var googleMap = document.createElement("a");
                 googleMap.href = `https://www.google.com/maps/search/?api=1&query=${res.coord.lat},${res.coord.lon}`;
-                weatherSection.append(googleMap);
+                weatherSection.appendChild(googleMap);
                 console.log(googleMap);
             }
             console.log(res);
