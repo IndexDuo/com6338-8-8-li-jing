@@ -30,6 +30,8 @@ submitButton.addEventListener("click", (e) => {
 
                 var googleMap = document.createElement("a");
                 googleMap.href = `https://www.google.com/maps/search/?api=1&query=${res.coord.lat},${res.coord.lon}`;
+                googleMap.target = "__BLANK";
+                googleMap.textContent = "Click to view map";
                 weatherSection.appendChild(googleMap);
                 console.log(googleMap);
             }
