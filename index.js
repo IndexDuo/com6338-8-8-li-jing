@@ -16,7 +16,7 @@ submitButton.addEventListener("click", (e) => {
             return res.json();
         })
         .then(function (res) {
-            if (res.cod == "404" || "400") {
+            if (res.cod == "404") {
                 console.log("not found");
                 var notFoundHeading = document.createElement("h2");
                 notFoundHeading.textContent = "Location Not Found";
@@ -27,6 +27,9 @@ submitButton.addEventListener("click", (e) => {
                 console.log(res.sys.country);
                 cityCountry.textContent = `${res.name}, ${res.sys.country}`;
                 weatherSection.append(cityCountry);
+
+                var googleMap = document.createElement("a");
+                googleMap.textContent
             }
             console.log(res);
         });
