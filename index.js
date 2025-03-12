@@ -36,8 +36,17 @@ submitButton.addEventListener("click", (e) => {
                 // console.log(googleMap);
 
                 var image = document.createElement("img");
-                image.src = `https://openweathermap.org/img/wn/${res.weather.icon}@2x.png`;
+                image.src = `https://openweathermap.org/img/wn/${res.weather[0].icon}@2x.png`;
                 weatherSection.appendChild(image);
+
+                var skyPara = document.createElement("p");
+                skyPara.style.text
+
+                var tempPara = document.createElement("p");
+
+                var feelsLikePara = document.createElement("p");
+
+                var lastUpdatedPara = document.createElement("p");
             }
             console.log(res);
         });
