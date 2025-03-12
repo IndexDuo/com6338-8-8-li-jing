@@ -10,7 +10,7 @@ submitButton.addEventListener("click", (e) => {
     userInput.value = "";
     // console.log(userInput.value);
     fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=${apiKey}`
     )
         .then(function (res) {
             return res.json();
