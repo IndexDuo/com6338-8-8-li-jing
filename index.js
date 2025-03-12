@@ -42,7 +42,7 @@ submitButton.addEventListener("click", (e) => {
                 var skyPara = document.createElement("p");
                 skyPara.style.textTransform = "capitalize";
                 skyPara.textContent = `${res.weather.description}`;
-                weatherSection.appendChild(weatherSection);
+                weatherSection.appendChild(skyPara);
 
                 var tempPara = document.createElement("p");
                 tempPara.textContent = `Current: ${res.main.temp}`;
@@ -53,8 +53,13 @@ submitButton.addEventListener("click", (e) => {
                 weatherSection.appendChild(feelsLikePara);
 
                 var lastUpdatedPara = document.createElement("p");
-                var lastUpdatedTime = res.dt * 1000;
-                lastUpdatedPara.textContent = `Current: ${lastUpdatedTime}`;
+                var dt = res.dt * 1000;
+                var date = new Date(dt);
+                var timeString = date.toLocaleTimeString("en-US", {
+                    hour: "numeric",
+                    minute: "2-digit",
+                });
+                lastUpdatedPara.textContent = `Current: ${timeString}`;
                 weatherSection.appendChild(lastUpdatedPara);
             }
             console.log(res);
