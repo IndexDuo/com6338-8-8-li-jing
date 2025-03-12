@@ -6,16 +6,17 @@ var weatherSection = document.getElementById("weather");
 submitButton.addEventListener("click", (e) => {
     e.preventDefault();
     weatherSection.innerHTML = "";
+    var location = userInput.value;
     userInput.value = "";
     // console.log(userInput.value);
     fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${userInput.value}&appid=${apiKey}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}`
     )
         .then(function (res) {
             return res.json();
         })
         .then(function (res) {
-            if (res.cod == "404") {
+            if (res.cod == "404" || "400") {
                 console.log("not found");
                 var notFoundHeading = document.createElement("h2");
                 notFoundHeading.textContent = "Location Not Found";
