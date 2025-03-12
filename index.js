@@ -24,12 +24,14 @@ submitButton.addEventListener("click", (e) => {
             } else {
                 console.log("found");
                 var cityCountry = document.createElement("h2");
-                console.log(res.sys.country);
+
                 cityCountry.textContent = `${res.name}, ${res.sys.country}`;
                 weatherSection.append(cityCountry);
 
                 var googleMap = document.createElement("a");
-                googleMap.textContent
+                googleMap.href = `https://www.google.com/maps/search/?api=1&query=${res.coord.lat},${res.coord.lon}`;
+                weatherSection.append(googleMap);
+                console.log(googleMap);
             }
             console.log(res);
         });
